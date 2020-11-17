@@ -1,0 +1,9 @@
+<h1>List of Client</h1>
+<button><%= link_to  "Add Client", new_client_path %></button>
+<br>
+<% @clients.each do |client| %>
+  <br>
+  <%= link_to client.name, client_path(client)  %> <br>
+  <%=client.phone_number %> <br>
+  <%=mail_to client.email %> <br>
+<% end %>
