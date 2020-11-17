@@ -1,0 +1,14 @@
+<strong>
+  <h1>Appointment Info</h1>
+</strong>
+<br>
+<strong>Client: </strong><%= link_to @appointment.client_name, client_path(@appointment.client)  %>  <br>
+<strong>Barber: </strong> <%= link_to @appointment.barber_name, barber_path(@appointment.barber)   %> <br>
+<strong>Location: </strong><%= @appointment.location  %> <br>
+<strong>Starting Time: </strong><%= @appointment.starting_date_and_time.strftime("%b %e, %l:%M %p") %> <br>
+<strong>Ending Time: </strong><%= @appointment.ending_date_and_time.strftime("%b %e, %l:%M %p") %>  <br>
+<br>
+<button><%= link_to  "Edit Appointment" , edit_appointment_path(@appointment) %></button> <br>
+<%= form_tag(appointment_path(@appointment), method: :delete, style: "display: inline-block;")  do %>
+  <strong> <%= submit_tag "Delete Appointment ", style: "color: green;" %> </strong> <br>
+<% end %>
