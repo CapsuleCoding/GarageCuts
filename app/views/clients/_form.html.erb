@@ -1,0 +1,14 @@
+<%= show_errors_for(client) %>
+<%= form_for client do |f| %>
+  <p>
+    <strong>  <%= f.label :name, "Name" %></strong>
+    <%= f.text_field :name %>
+  </p>
+  <strong>  <%= f.label :phone_number, "Phone Number" %></strong>
+  <%= f.text_field :phone_number %>
+  <p>
+    <strong><%= f.label :email, "Email Address" %></strong>
+    <%= f.email_field :email %>
+  </p>
+  <%= f.submit %>
+<% end %>
