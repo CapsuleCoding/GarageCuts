@@ -1,0 +1,14 @@
+<h1>New Barber </h1>
+<%= show_errors_for(@barber) %>
+<%= form_for(@barber) do |f| %>
+  <strong><%= f.label :name, "Name" %></strong>
+  <%= f.text_field :name %> <br>
+  <strong> <%= f.label :phone_number, "Phone Number" %> </strong>
+  <%= f.text_field :phone_number %> <br>
+  <strong> <%= f.label :email, "Email Address" %> </strong>
+  <%= f.email_field :email %> <br>
+  <strong> <%= f.label :skills, "Skills" %> </strong>
+  <%= f.text_field :skills %> <br>
+  <br>
+  <strong> <%= f.submit %> </strong>
+<% end %>
