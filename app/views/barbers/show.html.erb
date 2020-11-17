@@ -1,0 +1,7 @@
+<br>
+<strong>Name: </strong><%= @barber.name  %> <br>
+<strong>Phone Number:</strong>   <%= @barber.phone_number %> <br>
+<strong>Email Address:</strong> <%= mail_to @barber.email %> <br>
+<strong><%= "Skills".pluralize(@barber.skills) %>  </strong> <%= @barber.skills  %> <br>
+<strong>Schedule An Appointment With:</strong> <%= link_to @barber.name, new_barber_appointment_path(@barber) %><br>
+<strong>Appointment List For:</strong> <%= link_to @barber.name, barber_appointments_path(@barber) %>
