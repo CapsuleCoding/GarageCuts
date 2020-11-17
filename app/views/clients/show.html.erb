@@ -1,0 +1,7 @@
+<h1><%= @client.name  %></h1>
+<p> <strong>Make An Appointment For:</strong> <%= link_to @client.name, new_client_appointment_path(@client)%></p>
+<p> <strong>List Of Appointments For:</strong><%= link_to @client.name, client_appointments_path(@client) %></p>
+<p><%= link_to "Edit Client", edit_client_path(@client) %></p>
+<%= form_tag(client_path(@client), method: :delete) do %>
+  <strong> <%= submit_tag "Delete Client", style: "color: green;" %> </strong> <br>
+<% end %>
