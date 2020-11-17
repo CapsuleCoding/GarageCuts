@@ -1,0 +1,40 @@
+<%= show_errors_for(appointment) %>
+<%= form_for appointment do |f| %>
+  <p>
+    <% if appointment.client_id  %>
+      <strong>  <%= f.label :client_id, "Client" %> </strong>
+      <%= f.hidden_field :client_id %>
+      <%= appointment.client.name  %>
+    <% else %>
+      <strong>  <%= f.label :client_id, "Client" %> </strong>
+      <%= f.collection_select(:client_id, current_user.clients, :id, :name) %>
+    <% end %>
+  </p>
+  <p>
+    <% if appointment.barber_id %>
+      <strong>  <%= f.label :barber_id, "Barber" %></strong>
+      <%= f.hidden_field :barber_id %>
+      <%= appointment.barber.name %>
+    <% else %>
+      <strong>   <%= f.label :barber_id, "Barber" %></strong>
+      <%= f.collection_select :barber_id, Barber.all, :id, :name %>
+    <% end %>
+  </p>
+  <%
+=begin%>
+ <p>
+    <strong>  <%= f.label :skills %>  </strong>
+    <%= f.text_field :skills %>
+  </p> 
+<%
+=end%>
+  <p>
+    <strong> <%= f.label :starting_date_and_time, "Starting Date and Time" %></strong>
+    <%= f.datetime_field :starting_date_and_time %>
+  </p>
+  <p>
+    <strong> <%= f.label :ending_date_and_time, "Ending Date and Time" %> </strong>
+    <%= f.datetime_field :ending_date_and_time %>
+  </p>
+  <%= f.submit %>
+<% end %>
