@@ -1,0 +1,9 @@
+<h1>Barbers List</h1>
+<button><%= link_to  "Add Barber", new_barber_path %></button>
+<br>
+<% @barbers.each do |barber| %><br>
+  <%= link_to barber.name, barber_path(barber) %> <br>
+  <%= barber.phone_number  %>  <br>
+  <%= mail_to barber.email  %> <br>
+  <%= link_to barber.skills %> <br>
+<% end %>
