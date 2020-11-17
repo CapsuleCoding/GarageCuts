@@ -1,0 +1,13 @@
+<nav>
+  <button> <%= link_to "List of Clients", clients_url, style: "color: green;" %></button>
+  <button><%= link_to "List of Barbers", barbers_url, style: "color: red;" %></button>
+  <button><%= link_to "List of Appointments", appointments_url, style: "color: orange;" %></button>
+  <% if user_signed_in?  %>
+    <%= form_tag(destroy_user_session_path, method: :delete, style: "display: inline-block;") do %></button>
+    <%= submit_tag "Sign Out", style: "color: yellow;" %>
+  <% end %>
+<% else %>
+  <button><%= link_to  "Sign Up", new_user_registration_path, style: "color: yellow;" %> </button>
+  <button><%= link_to  "Sign In", new_user_session_path, style: "color: yellow;" %> </button>
+<% end %>
+</nav>
